@@ -1,0 +1,87 @@
+package com.ilp.utility;
+
+import java.util.*;
+
+import com.ilp.entity.Account;
+import com.ilp.entity.Customer;
+import com.ilp.entity.Product;
+import com.ilp.entity.Services;
+import com.ilp.services.AccountServices;
+
+public class AccountUtility {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner=new Scanner(System.in);
+		
+		char continueChoice;
+		ArrayList<Services> allServices=new ArrayList<Services>();
+		ArrayList<Product> allProducts=new ArrayList<Product>();
+		ArrayList<Account> allAccounts=new ArrayList<Account>();
+		
+		Customer customer=null;
+		
+		do {
+		int userChoice=mainMenu();
+		switch(userChoice)
+		{
+		case 1:AccountServices.createServices(allServices);
+		break;
+		case 2:AccountServices.createProduct(allServices,allProducts);
+		break;
+		case 3:customer=AccountServices.createCustomer(allProducts);
+		break;
+		default:
+			System.out.println("Invalid Choice");
+			
+		
+		}
+		System.out.println("Do you want to continue (y/n)");
+		continueChoice=scanner.next().charAt(0);
+		}while(continueChoice=='y');
+		
+		if (allProducts != null && !allProducts.isEmpty()) {
+		    for (Product product1 : allProducts) {
+		        System.out.println("dada");
+		        System.out.println(product1);
+		    }
+		} else {
+		    System.out.println("The allProducts list is empty or null.");
+		}
+		
+		System.out.println("customer");
+		allAccounts=customer.getAccounts();
+		for(Account account:allAccounts)
+		{
+			System.out.println("account"+account);
+		}
+		
+		System.out.println(customer.getCustomerName());
+		System.out.println(customer.getCustomerCode());
+		System.out.println(customer.getAccounts());
+
+		
+		
+	
+	
+}
+	
+	
+	public static int mainMenu() {
+		Scanner scanner=new Scanner(System.in);
+		
+		int userChoice;
+	
+		System.out.println("1 Create Services 2 Create Product 3 Create Customer");
+		userChoice=scanner.nextInt();
+		
+		
+		
+		
+	
+		
+		return userChoice;
+		
+	}
+
+}

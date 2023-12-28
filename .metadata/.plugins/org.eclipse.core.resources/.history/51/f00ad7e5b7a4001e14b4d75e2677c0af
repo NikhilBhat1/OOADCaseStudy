@@ -1,0 +1,45 @@
+package com.ilp.entity;
+
+public class Account {
+	private String acNo;
+	private String acType;
+	private double balance;
+	private String product;
+	
+	
+	
+	
+	public Account(String acNo, String acType, double balance, String product) {
+		
+		this.acNo = acNo;
+		this.acType = acType;
+		this.balance = balance;
+		this.product = product;
+	}
+	public String getAcNo() {
+		return acNo;
+	}
+	public void setAcNo(String acNo) {
+		this.acNo = acNo;
+	}
+	public String getAcType() {
+		return acType;
+	}
+	public void setAcType(String acType) {
+		this.acType = acType;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	public String getProduct() {
+		return product;
+	}
+	public void setProduct(String product) {
+		this.product = product;
+	}
+	
+
+}

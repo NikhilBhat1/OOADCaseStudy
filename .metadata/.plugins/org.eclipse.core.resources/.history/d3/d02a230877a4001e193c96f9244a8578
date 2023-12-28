@@ -1,0 +1,10 @@
+package com.ilp.utility;
+
+public class AccountUtility {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

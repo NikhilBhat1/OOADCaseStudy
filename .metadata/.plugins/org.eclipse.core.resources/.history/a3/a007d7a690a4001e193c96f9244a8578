@@ -1,0 +1,40 @@
+package com.ilp.utility;
+
+import java.util.*;
+
+import com.ilp.entity.Services;
+import com.ilp.services.AccountServices;
+
+public class AccountUtility {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Services> allServices=new ArrayList<Services>();
+		int userChoice=mainMenu();
+		switch(userChoice)
+		{
+		case 1:AccountServices.createServices(allServices);
+		break;
+		default:
+			System.out.println("Invalid Choice");
+		}
+
+	}
+	
+	
+	
+	public static int mainMenu() {
+		Scanner scanner=new Scanner(System.in);
+		char continueChoice;
+		int userChoice;
+		do {
+		System.out.println("1 Create Services");
+		userChoice=scanner.nextInt();
+		System.out.println("Do you want to continue(y/n)");
+		continueChoice=scanner.next().charAt(0);
+		}while(continueChoice=='y');
+		return userChoice;
+		
+	}
+
+}

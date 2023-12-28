@@ -1,0 +1,70 @@
+package com.ilp.services;
+
+import java.util.*;
+
+import com.ilp.entity.*;
+
+public class AccountServices {
+	public static void createServices(ArrayList<Services> allServices)
+	{   int flag=0;
+		Services service=new Services();
+		Scanner scanner=new Scanner(System.in);
+		
+		System.out.println("Enter the Service Code");
+		String serviceCode=scanner.next();
+		service.setServiceCode(serviceCode); 
+		System.out.println("Enter the Service Name");
+		service.setServiceName(scanner.next());
+		System.out.println("Enter the Rate");
+		service.setRate(scanner.nextDouble());
+		
+		for(Services ser:allServices) {
+			
+			if(ser.getServiceCode().compareToIgnoreCase(serviceCode)==0)
+			{
+				
+				flag=1;
+				break;
+			}
+			else {
+			
+				flag=0;
+			}
+		}
+		
+		
+		if (flag==1)
+		{
+			System.out.println("Service already exists");
+		}
+		else {
+		
+			allServices.add(service);
+			System.out.println("Service Created");
+		}
+		
+		
+	}
+	
+	
+	public static void createProduct(ArrayList<Services> allServices) {
+		Product product=new Product();
+		Scanner scanner=new Scanner(System.in);
+		ArrayList<Services> productServices=new ArrayList<Services>();
+		System.out.println("Enter the prodcut code");
+		String productCode=scanner.next();
+		product.setProductCode(productCode);
+		System.out.println("Enter the product name");
+		product.setProductName(scanner.next());
+		for (Services service : allServices) {
+		    System.out.println("Service Code: " + service.getServiceCode());
+		    System.out.println("Service Name: " + service.getServiceName());
+		 
+		
+		
+	    }
+		System.out.println("Enter the service you want to add");
+		
+		
+
+}

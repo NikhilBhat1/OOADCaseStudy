@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.security.Provider.Service"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.ilp.services.AccountServices"/>
+    <fullyQualifiedTypeName name="com.ilp.entity.Services"/>
+    <fullyQualifiedTypeName name="com.ilp.entity.Product"/>
+    <fullyQualifiedTypeName name="com.ilp.entity.Account"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.ilp.entity.Customer"/>
+</qualifiedTypeNameHistroy>

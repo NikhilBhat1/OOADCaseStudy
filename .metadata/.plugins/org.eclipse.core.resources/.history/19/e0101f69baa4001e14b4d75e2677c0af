@@ -1,0 +1,5 @@
+package com.ilp.entity;
+
+public class CurrentAccount extends Product {
+
+}

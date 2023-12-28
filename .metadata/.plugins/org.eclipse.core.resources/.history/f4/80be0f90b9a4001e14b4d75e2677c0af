@@ -1,0 +1,14 @@
+package com.ilp.entity;
+
+public class SavingMaxAccount extends Product {
+	private double minBalance;
+
+	public double getMinBalance() {
+		return minBalance;
+	}
+
+	public void setMinBalance(double minBalance) {
+		this.minBalance = minBalance;
+	}
+
+}

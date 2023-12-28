@@ -1,0 +1,102 @@
+package com.ilp.services;
+
+import java.util.*;
+
+import com.ilp.entity.*;
+
+public class AccountServices {
+	public static void createServices(ArrayList<Services> allServices)
+	{   int flag=0;
+		Services service=new Services();
+		Scanner scanner=new Scanner(System.in);
+		
+		System.out.println("Enter the Service Code");
+		String serviceCode=scanner.next();
+		service.setServiceCode(serviceCode); 
+		System.out.println("Enter the Service Name");
+		service.setServiceName(scanner.next());
+		System.out.println("Enter the Rate");
+		service.setRate(scanner.nextDouble());
+		
+		for(Services ser:allServices) {
+			
+			if(ser.getServiceCode().compareToIgnoreCase(serviceCode)==0)
+			{
+				
+				flag=1;
+				break;
+			}
+			else {
+			
+				flag=0;
+			}
+		}
+		
+		
+		if (flag==1)
+		{
+			System.out.println("Service already exists");
+		}
+		else {
+		
+			allServices.add(service);
+			System.out.println("Service Created");
+		}
+		
+		
+	}
+	
+	
+	public static void createProduct(ArrayList<Services> allServices,ArrayList<Product> products) {
+		Scanner scanner=new Scanner(System.in);
+		
+		
+		ArrayList<Services> productServices=new ArrayList<Services>();
+		System.out.println("Enter the prodcut code");
+		String productCode=scanner.next();
+
+		System.out.println("Enter the product name");
+		String productName=scanner.next();
+
+		for (Services service : allServices) {
+		    System.out.println("Service Code: " + service.getServiceCode());
+		    System.out.println("Service Name: " + service.getServiceName());
+		    System.out.println();
+		 
+		
+		
+	    }
+		System.out.println("Enter the service id you want to add");
+		String userChoice=scanner.next();
+		for(Services service:allServices)
+		{
+			if(service.getServiceCode().compareTo(userChoice)==0)
+			{
+				productServices.add(service);
+			}
+		}
+
+		
+		
+		System.out.println("1 Saving Max Account \n 2 Current Account \n 3 Loan Account");
+		int userProductChoice=scanner.nextInt();
+		switch(userProductChoice) {
+		case 1:SavingMaxAccount savingsMaxAccount=new SavingMaxAccount(productCode,productName,productServices,1000);
+		products.add(savingsMaxAccount);
+		break;
+		case 2:CurrentAccount currentAccount=new CurrentAccount(productCode,productName,productServices);
+		products.add(currentAccount);
+		break;
+		case 3:LoanAccount loanAccount=new LoanAccount(productCode,productName,productServices,true);
+		products.add(loanAccount);
+		break;
+		default:
+			System.out.println("invalid choice");
+		}
+		
+	}
+}
+		
+		
+
+
